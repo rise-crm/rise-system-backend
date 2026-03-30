@@ -46,6 +46,8 @@ jobs:
       # 3. Deploy to k3s
       - name: Deploy to k3s
         uses: azure/k8s-deploy@v4
+        env:
+          KUBECONFIG: /home/runner/.kube/config
         with:
           action: deploy
           strategy: basic
