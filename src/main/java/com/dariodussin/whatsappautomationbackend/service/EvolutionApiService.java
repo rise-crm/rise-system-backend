@@ -10,6 +10,7 @@ import com.dariodussin.whatsappautomationbackend.model.JobMetadata;
 import reactor.core.publisher.Mono;
 
 import java.util.Map;
+import java.util.Objects;
 
 @Service
 public class EvolutionApiService {
@@ -38,7 +39,7 @@ public class EvolutionApiService {
                             "text", meta.message(),
                             "delay", 1200,
                             "linkPreview", true,
-                            "mentionsEveryOne", meta.mentionAll()
+                            "mentions", Map.of("everyOne", Objects.requireNonNullElse(meta.mentionAll(), false))
                     ))
                     .retrieve()
                     // Capture 4xx/5xx errors specifically
