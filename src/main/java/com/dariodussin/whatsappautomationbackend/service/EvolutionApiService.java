@@ -39,7 +39,7 @@ public class EvolutionApiService {
                             "number", number,
                             "text", meta.message(),
                             "delay", 1200,
-                            "linkPreview", true,
+                            "linkPreview", false,
                             "mentionsEveryOne", Objects.requireNonNullElse(meta.mentionAll(), false)
                     ))
                     .retrieve()
@@ -139,7 +139,7 @@ public class EvolutionApiService {
                 "number", number,
                 "audio", meta.fileUrl(),
                 "delay", 1200,
-                "linkPreview", true,
+                "linkPreview", false,
                 "mentionsEveryOne", Objects.requireNonNullElse(meta.mentionAll(), false)
         );
 
