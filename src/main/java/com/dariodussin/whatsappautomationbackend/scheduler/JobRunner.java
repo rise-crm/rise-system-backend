@@ -73,7 +73,7 @@ public class JobRunner {
                 executeSingleTask(instance, groupId, task, meta);
 
                 //  Random delay between 5 to 15 seconds between each group
-                humanDelay = (long) (Math.random() * (5000 - 3000) + 3000);
+                long humanDelay = (long) (Math.random() * (5000 - 3000) + 3000);
                 System.out.println("Sleeping for " + (humanDelay / 1000) + "s to avoid ban...");
                 Thread.sleep(humanDelay);
 
