@@ -24,7 +24,7 @@ public class JobRunner {
         this.evolutionApiService = evolutionApiService;
     }
 
-    @Scheduled(fixedDelay = 60000)
+    @Scheduled(fixedDelay = 10000)
     public void runJobs() {
         List<ScheduleJob> tasks = supabaseApiService.fetchPendingTasks();
         if (tasks == null || tasks.isEmpty()) return;
@@ -72,8 +72,8 @@ public class JobRunner {
             try {
                 executeSingleTask(instance, groupId, task, meta);
 
-                // Random delay between 5 to 15 seconds between each group
-                long humanDelay = (long) (Math.random() * (15000 - 5000) + 5000);
+                //  Random delay between 5 to 15 seconds between each group
+                humanDelay = (long) (Math.random() * (5000 - 3000) + 3000);
                 System.out.println("Sleeping for " + (humanDelay / 1000) + "s to avoid ban...");
                 Thread.sleep(humanDelay);
 

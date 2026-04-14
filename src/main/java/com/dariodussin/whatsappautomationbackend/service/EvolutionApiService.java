@@ -38,7 +38,7 @@ public class EvolutionApiService {
                     .bodyValue(Map.of(
                             "number", number,
                             "text", meta.message(),
-                            "delay", 1200,
+                            // "delay", 1200,
                             "linkPreview", false,
                             "mentionsEveryOne", Objects.requireNonNullElse(meta.mentionAll(), false)
                     ))
@@ -76,7 +76,7 @@ public class EvolutionApiService {
                 "number", number,
                 "mediatype", type.getEvolutionValue(), // Must be "image", "video", etc.
                 "media", meta.fileUrl(),
-                "delay", 1200,
+                //"delay", 1200,
                 "caption", meta.message() != null ? meta.message() : "",
                 "fileName", Paths.get(meta.fileUrl()).getFileName().toString()
         );
@@ -138,7 +138,7 @@ public class EvolutionApiService {
         Map<String, Object> payload = Map.of(
                 "number", number,
                 "audio", meta.fileUrl(),
-                "delay", 1200,
+                // "delay", 1200,
                 "linkPreview", false,
                 "mentionsEveryOne", Objects.requireNonNullElse(meta.mentionAll(), false)
         );
